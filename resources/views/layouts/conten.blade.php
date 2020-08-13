@@ -89,7 +89,18 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            @yield('nama')
+                                            @yield('nama') 
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
@@ -120,9 +131,7 @@
                     </div>        </div>
             </div>
         </div>        <div class="ui-theme-settings">
-            <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
-                <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
-            </button>
+           
             <div class="theme-settings__inner">
                 <div class="scrollbar-container">
                     <div class="theme-settings__options-wrapper">
@@ -433,9 +442,9 @@
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Dashboards</li>
                                 <li>
-                                    <a href="index.html" class="mm-active">
+                                    <a href="/dashboard" class="mm-active">
                                         <i class="metismenu-icon pe-7s-rocket"></i>
-                                        Dashboard Example 1
+                                        Dashboard {{Auth::user()->level}}
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">UI Components</li>
@@ -672,7 +681,7 @@
                                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                                         </i>
                                     </div>
-                                    <div>Analytics Dashboard
+                                    <div>@yield('ket')
                                         <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
                                         </div>
                                     </div>
