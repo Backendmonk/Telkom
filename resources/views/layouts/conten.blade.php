@@ -22,6 +22,10 @@
     -->
  <link rel="stylesheet" href="main.css"></head>
 <body>
+<?php
+                 $a = e(Auth::user()->level); 
+                 $p = e(Auth::user()->password);
+        ?>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
@@ -94,9 +98,9 @@
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                            <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                                           
+                                            <button type="button"  tabindex="0" class="dropdown-item" data-toggle="modal" data-target="#exampleModalLong">Data Diri</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-                                            <h6 tabindex="-1" class="dropdown-header">Header</h6>
                                             <button type="button" tabindex="0" class="dropdown-item">Actions</button>
                                             <div tabindex="-1" class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -354,5 +358,57 @@
                 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Data {{Auth::user()->name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-xs-9 col-md-12">
+                                        <div class="main-card mb-3 card">
+                                            <div class="card-body">
+                                                <form method="post" action="/editdata/{{Auth::user()->id}}">
+                                                @csrf
+                                                <div class="position-relative form-group"><label for="exampleEmail" class="">Nama</label><input name="name" id="exampleEmail"  type="text" class="form-control" value="{{Auth::user()->name}}"></div>
+
+
+                                        
+                                                    <div class="position-relative form-group"><label for="exampleEmail" class="">Email</label><input name="email" id="exampleEmail"  type="email" class="form-control" value="{{Auth::user()->email}}"></div>
+
+                                                    <div class="position-relative form-group"><label for="exampleEmail" class="">Alamat</label><input name="alamat" id="exampleEmail"  type="text" class="form-control" value="{{Auth::user()->alamat}}"></div>
+
+                                                    <div class="position-relative form-group"><label for="exampleEmail" class="">Level</label><input name="level" id="exampleEmail"  type="email" class="form-control" value="{{Auth::user()->level}}" readonly></div>
+                                                   
+                                                   
+                                                   
+                                                   <button type ="submit" class="mt-1 btn btn-primary">Save Data</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                         
+            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+             
+                          
+           
+
+<!--end modal-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="{{asset('.././assets/scripts/main.js')}}"></script></body>
 </html>
