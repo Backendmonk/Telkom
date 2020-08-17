@@ -13,9 +13,7 @@
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Nama</th>
-                                                    <th>Alamat</th>
-                                                    <th>Email</th>
-                                                    <th>Terdaftar pada</th>
+                                                    <th>More</th>
                                                     
                                                     
                                                 </tr>
@@ -25,11 +23,14 @@
                                                 <tr>
                                                     <th scope="row">{{$t->id}}</th>
                                                     <td>{{$t->name}}</td>
-                                                    <td>{{$t->alamat}}</td>
-                                                    <td>{{$t->email}}</td>
-                                                    <td>{{$t->created_at}}</td>
+                                                    <td><button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Data Lengkap</button>
+                                                
+                                                </td>
+                                                
+                                                    
                                                     
                                                 </tr>
+                                                
                                                     @endforeach
                                                 </tbody>
                                             </table>
@@ -37,4 +38,7 @@
                                     </div>
                                 </div>
                             </div>
+                                                     
 @endsection
+
+

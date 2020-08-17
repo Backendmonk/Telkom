@@ -18,4 +18,6 @@ class usercontroller extends Controller
         return view ('admin.datateknisi',compact('tek'));
       
     }
+
+    
 }

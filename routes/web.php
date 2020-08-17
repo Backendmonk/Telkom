@@ -24,3 +24,4 @@ Route::post('/editdata/{id}','HomeController@update');
 Route::get('/data-teknisi','userController@teknisi');
 
 
+
