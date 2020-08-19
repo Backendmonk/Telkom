@@ -227,32 +227,26 @@
 
                                 
                                 @endif
-                                <li class="app-sidebar__heading">Widgets</li>
-                                <li>
-                                    <a href="dashboard-boxes.html">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
-                                        Dashboard Boxes
-                                    </a>
-                                </li>
-                                <li class="app-sidebar__heading">Forms</li>
+
+                                @if($a == "admin")
+                                <li class="app-sidebar__heading">Laporan</li>
                                 <li>
                                     <a href="forms-controls.html">
-                                        <i class="metismenu-icon pe-7s-mouse">
-                                        </i>Forms Controls
+                                        <i class="metismenu-icon pe-7s-notebook">
+                                        </i>Laporan Dari teknisi
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="forms-layouts.html">
-                                        <i class="metismenu-icon pe-7s-eyedropper">
-                                        </i>Forms Layouts
+                                @elseif($a == "user")
+                                <li class="app-sidebar__heading">Laporan Pelanggan</li>
+                                <li>
+                                    <a href="forms-controls.html">
+                                        <i class="metismenu-icon pe-7s-notebook">
+                                        </i>Laporan
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="forms-validation.html">
-                                        <i class="metismenu-icon pe-7s-pendrive">
-                                        </i>Forms Validation
-                                    </a>
-                                </li>
+                                @endif
                                 <li class="app-sidebar__heading">Charts</li>
                                 <li>
                                     <a href="charts-chartjs.html">
