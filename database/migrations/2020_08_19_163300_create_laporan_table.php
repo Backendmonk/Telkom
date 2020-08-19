@@ -15,7 +15,11 @@ class CreateLaporanTable extends Migration
     {
         Schema::create('laporan', function (Blueprint $table) {
             $table->id();
-            
+            $table->unsignedBigInteger('pelanggan_id');
+            $table->foreign('pelanggan_id')
+            ->references('id')
+            ->on('pelanggan');
+            $table->string('update');
             $table->timestamps();
         });
     }
