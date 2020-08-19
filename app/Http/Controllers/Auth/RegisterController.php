@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/data-teknisi';
 
     /**
      * Create a new controller instance.
@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'level' => ['required', 'string', 'max:255'],
             'alamat' => ['required', 'string', 'max:255'],
         ]);
-    }
+    } 
 
     /**
      * Create a new user instance after a valid registration.

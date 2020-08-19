@@ -189,6 +189,13 @@
                                                 </i>Data Teknisi
                                             </a>
                                         </li>
+
+                                        <li>
+                                            <a href="/add-teknis">
+                                                <i class="metismenu-icon">
+                                                </i>Tambah teknisi
+                                            </a>
+                                        </li>
                                         
                                     </ul>
                                 </li>
@@ -273,7 +280,12 @@
                                    
                                 </div>
                                    </div>
-                        </div>           
+                        </div>      
+                        @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif     
                         @yield('content')
                        
                                                            
@@ -378,6 +390,10 @@
 
 
 <!--end modal-->
+
+
+          
+
 
 
 

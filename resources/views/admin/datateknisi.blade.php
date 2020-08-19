@@ -2,43 +2,57 @@
 
 
 @section('content')
+
 <CENTER><h1>DATA TEKNISI YANG TERDAFTAR</h1></CENTER>
 <BR></BR>
+
+
 <div class="col-lg-15">
                                 <div class="main-card mb-20 card">
-                                    <div class="card-body"><h5 class="card-title">Data</h5>
+                                    <div class="card-body"><h5 class="card-title">Data </h5>
+                                   
                                         <div class="table-responsive">
                                             <table class="mb-0 table">
                                                 <thead>
                                                 <tr>
-                                                    <th>ID</th>
+                                                  
                                                     <th>Nama</th>
-                                                    <th>More</th>
+                                                    <th>Tgl terdaftar</th>
+                                                    <th>Level</th>
                                                     
                                                     
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach($tek as $t)
-                                                <tr>
-                                                    <th scope="row">{{$t->id}}</th>
+                                                   
+                                                  <tr>
+                                                  
                                                     <td>{{$t->name}}</td>
-                                                    <td><button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Data Lengkap</button>
+                                                    <td>{{$t->created_at}}</td>
+                                                    <td>{{$t->level}}</td> 
+                                                    <td> 
                                                 
-                                                </td>
                                                 
                                                     
                                                     
                                                 </tr>
                                                 
-                                                    @endforeach
+                                                @endforeach
                                                 </tbody>
-                                            </table>
+                                                </table>   
+                                               
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                                                     
-@endsection
+                            
+</div> </div>
+</div>
+             
+                      
+      
 
+                         
+@endsection
 

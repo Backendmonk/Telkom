@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/editdata/{id}','HomeController@update');
 Route::get('/data-teknisi','userController@teknisi');
-
+Route::get('/add-teknis','userController@add');
+Route::post('/add-teknisi','userController@store');
 
 
