@@ -66,26 +66,7 @@
                         </div>
                         <button class="close"></button>
                     </div>
-                    <ul class="header-menu nav">
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-database"> </i>
-                                Statistics
-                            </a>
-                        </li>
-                        <li class="btn-group nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-edit"></i>
-                                Projects
-                            </a>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-cog"></i>
-                                Settings
-                            </a>
-                        </li>
-                    </ul>        </div>
+                            </div>
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
@@ -247,6 +228,7 @@
                                 </li>
                                 <li>
                                 @endif
+                                  @if($a == "user")
                                 <li class="app-sidebar__heading">Charts</li>
                                 <li>
                                     <a href="charts-chartjs.html">
@@ -262,6 +244,7 @@
                                         Upgrade to PRO
                                     </a>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -275,12 +258,20 @@
                                 </div>
                                    </div>
                         </div>      
-                        @if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif     
+                             @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                        
+                            @endif 
+                            @if (session('alert'))
+                        <div class="alert alert-primary">
+                            {{ session('alert') }}
+                        </div>
+                        
+                            @endif 
                         @yield('content')
+                        
                        
                                                            
                                                         </ul>

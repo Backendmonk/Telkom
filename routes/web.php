@@ -24,5 +24,6 @@ Route::post('/editdata/{id}','HomeController@update');
 Route::get('/data-teknisi','userController@teknisi');
 Route::get('/add-teknis','userController@add');
 Route::post('/add-teknisi','userController@store');
+Route::post('/resetpass/{id}','passcontroller@update');
 
 

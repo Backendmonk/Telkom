@@ -18,7 +18,9 @@
                                                   
                                                     <th>Nama</th>
                                                     <th>Tgl terdaftar</th>
-                                                    <th>Level</th>
+                                                    <th>Email</th>
+                                                    <th>Reset Password</th>
+                                                    
                                                     
                                                     
                                                 </tr>
@@ -30,12 +32,20 @@
                                                   
                                                     <td>{{$t->name}}</td>
                                                     <td>{{$t->created_at}}</td>
-                                                    <td>{{$t->level}}</td> 
-                                                    <td> 
+                                                    <td>{{$t->email}}</td> 
+                                                    <td><form action="/resetpass/{{$t->id}}" method="post">
+                                                    @csrf 
+                                                    <input type="hidden" name="password" value="password"> 
+                                                    <button class="mb-2 mr-2 btn btn-warning"><i class="pe-7s-back-2"> </i>
+                                                          
+                                                             </button>
+                                                   
+                                                    </form>
+                                                    </td>
                                                 
                                                 
                                                     
-                                                    
+                                                   
                                                 </tr>
                                                 
                                                 @endforeach
