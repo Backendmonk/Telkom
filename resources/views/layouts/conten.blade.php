@@ -180,8 +180,10 @@
                                         
                                     </ul>
                                 </li>
+                                <!-- End admin Area 1-->
 
-                                @elseif($a= "user")
+                                  <!-- user Area 1-->
+                                @elseif($a=="use")
                                 <li class="app-sidebar__heading">Pelanggan</li>
                                 <li>
                                     <a href="#">
@@ -205,10 +207,39 @@
                                         
                                     </ul>
                                 </li>
+                                  <!-- End user Area 1-->
 
-                                
+                                    <!-- superadmin Area 1-->
+                                @elseif($a=="superadmin")
+                                <li class="app-sidebar__heading">Pelanggan</li>
+                                <li>
+                                    <a href="#">
+                                        <i class="metismenu-icon pe-7s-users"></i>
+                                        Kelola pelanggan
+                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                    </a>
+                                    <ul >
+                                    <li>
+                                            <a href="elements-dropdowns.html">
+                                                <i class="metismenu-icon">
+                                                </i>Data Pelanggan
+                                            </a>
+                                        </li>
+                                        </ul>
+                                </li>
+                                <li class="app-sidebar__heading">Laporan</li>
+                                <li>
+                                    <a href="forms-controls.html">
+                                        <i class="metismenu-icon pe-7s-notebook">
+                                        </i>Kelola Laporan
+                                    </a>
+                                </li>
+                                <li>
                                 @endif
+                                <!-- End superadmin Area 1-->
 
+
+                                  <!-- admin Area 2-->
                                 @if($a == "admin")
                                 <li class="app-sidebar__heading">Laporan</li>
                                 <li>
@@ -218,6 +249,9 @@
                                     </a>
                                 </li>
                                 <li>
+                                  <!-- End admin Area 2-->
+
+                                    <!-- user Area 2-->
                                 @elseif($a == "user")
                                 <li class="app-sidebar__heading">Laporan Pelanggan</li>
                                 <li>
@@ -245,6 +279,7 @@
                                     </a>
                                 </li>
                                 @endif
+                                  <!-- End user Area 2-->
                             </ul>
                         </div>
                     </div>
@@ -258,6 +293,8 @@
                                 </div>
                                    </div>
                         </div>      
+
+                          <!-- Alert-->
                              @if (session('error'))
                         <div class="alert alert-danger">
                             {{ session('error') }}
@@ -270,7 +307,13 @@
                         </div>
                         
                             @endif 
+
+                             <!-- End alert-->
+
+
+                              <!-- content-->
                         @yield('content')
+                         
                         
                        
                                                            
@@ -323,6 +366,8 @@
                 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -343,7 +388,7 @@
                                                 @csrf
                                                 <div class="position-relative form-group"><label for="exampleEmail" class="">Nama</label><input name="name" id="exampleEmail"  type="text" class="form-control" value="{{Auth::user()->name}}"></div>
 
-
+                                                <div class="position-relative form-group"><label for="exampleEmail" class="">Password</label><input name="password" id="exampleEmail"  type="password" class="form-control" value="{{Auth::user()->password}}"></div>
                                         
                                                     <div class="position-relative form-group"><label for="exampleEmail" class="">Email</label><input name="email" id="exampleEmail"  type="email" class="form-control" value="{{Auth::user()->email}}"></div>
 
@@ -369,11 +414,6 @@
         </div>
     </div>
 </div>
-             
-                          
-           
-
-
 <!--end modal-->
 
 

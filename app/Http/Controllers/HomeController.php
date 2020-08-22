@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\user;
 use Session;
-
+use Illuminate\Support\Facades\Hash;
 class HomeController extends Controller
 {
     /**
@@ -34,12 +34,14 @@ class HomeController extends Controller
             'name' => 'required',
             'alamat' => 'required',
             'email' => 'required',
+            'password'=>'required',
             
         ]);
         $data = user::find($id);
         $data->name = $request->name;
         $data->alamat = $request->alamat;
         $data->email = $request->email;
+        $data->password = Hash::make($request->password);
         
         if($data->save()){
             return redirect('/home')->with('alert','Data Tersimpan');
