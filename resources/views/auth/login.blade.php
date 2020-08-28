@@ -48,7 +48,7 @@
 						<span class="txt1">
 							Lupa
 						</span>
-						<a class="txt2" href="{{ route('password.request') }}">
+						<a class="txt2" href="{{ route('register') }}">
 						 Password?
 						</a>
 					</div>
@@ -60,3 +60,5 @@
 	</div>
 
 @endsection
+
+<!-- SELECT laporan.id, layanan.layanan,pelanggan.nama, pelanggan.alamat,pelanggan.pic1,pelanggan.pic2,pelanggan.datek,laporan.update,laporan.status FROM `laporan` inner join `pelanggan` on pelanggan.id = laporan.pelanggan_id INNER join `layanan` on layanan.id = pelanggan.layanan_id -->
